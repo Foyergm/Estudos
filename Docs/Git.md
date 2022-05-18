@@ -15,11 +15,47 @@
 cd [Nome do local onde do repositorio]
 ~~~
 
-### <br />Depois que você realizar esse processo, está na hora de criar um arquivo ".md" que geralmente vem escrito como "README.md". Esse arquivo faz com que possa escrever e documentar sobre o projeto, e o que você está pensando e planejando fazer.
+### <br />Depois que você realizar esse processo, está na hora de criar um arquivo ".md", que é o "README.md". Esse arquivo faz com que possa escrever e documentar sobre o projeto, e o que você está pensando e planejando fazer.
 
 # <br />Mas como eu adiciono e salvo esses arquivos?
 
-### Esses arquivos para envio são chamados de "commit", eles salvam o projento como ele está naquele momento. Para "commitar", é necessário adicionar o arquivo usando o comando:
+### Esses arquivos para envio são chamados de "commit", eles salvam o projento como ele está naquele momento. Para "commitar", é necessário adicionar um repositório vazio com o comando abaixo, para começar um repositório novo.
+
+~~~html
+git init
+~~~
+
+### Caso você tenha criado um repositório no GitHub, então, precisamos puxar os arquivos de lá, para a nossa máquina, para isso, primeiro precisamos associar os 2 projetos (o do seu projeto com o do GitHub):
+
+~~~html
+git remote add origin "Link do repositório no GitHub"
+~~~
+
+### Para poder puxar para sua maquina o repositório do Github (Em uma atualização recente, não se usa mais "master" em muito dos casos, pois, o github está criando seu repositorio no "main"). 
+
+~~~
+git pull origin main
+~~~
+
+## <br /> **Mas meu branch ainda está master, o que eu faço?**
+
+### Você vai precisar trocar o branch no seu repositório para main, para sempre mandar os seus arquivos no repositório main do GitHub.
+
+~~~
+git checkout -b "main"
+~~~
+
+###  _Obs. Esse comando é utilizado para poder checar se existe um branch chamado "main", se não tiver, o git faz uma alteração no branch e coloca ele como "main"._
+
+## <br />**Depois disso, você ira seguir os proximos passos.**
+
+### <br /> Para saber como está o status do arquivo.
+
+~~~html
+git status
+~~~
+
+### Depois disso, é só adicionar o arquivo no repositório.
 
 ~~~html
 git add [Nome do arquivo]
@@ -64,11 +100,6 @@ git remote set-url origin 'link do HTTPS'
 git remote show origin -n
 ~~~
 
-### <br />**Agora, se aconteceu algum erro, teremos que usar o códigos abaixo e voltar o passo de adicionar o repositório novamente.**
-~~~html
-git remote rm
-~~~
-
 ### <br />Seguindo caso conseguiu fazer sem ter mais nenhum erro, iremos usar um comando para mandar o projeto do seu computador direto para o GitHub. Logo em seguida, mostrara uma mensagem informando o envio.
 ~~~html
 git push origin master
@@ -94,7 +125,7 @@ git status
 ~~~
 
 ~~~html
-git commit -m 'algum comentário'
+git commit -m "algum comentário"
 ~~~
 
 ~~~html
